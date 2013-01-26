@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8">
     {% block head %}{% endblock %}
-    <title>{% block title %}{{ config.site_title }}{% endblock %}</title>
+    <title>{% block title %}{{ site.name }}{% endblock %}</title>
     <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ static_url("css/style.css") }}" type="text/css" />
     <link rel="stylesheet" href="{{ static_url("css/pygments_style.css") }}" type="text/css" />
     <link rel="alternate" type="application/rss+xml" href="{{ config.feed }}" title="{{ site.name }}" />
+    {{ analytics() }}
 </head>
 <body>
 <div id="header">
@@ -76,7 +77,6 @@
         </div>
     </div>
 </div>
-{{ analytics() }}
 </body>
 </html>
 
