@@ -1,9 +1,9 @@
 {% extends 'layout.html' %}
-{% from 'utils.html' import render_comment %}
+{% from 'utils.html' import render_comment, twittercard %}
 
 {% block head %}
-<meta name="description" content="{{ post.title }},{% for tg in post.tags %}{{ tg }},{% endfor %}">
-<meta name="keywords" content="{% for tg in post.tags %}{{ tg }},{% endfor %}">
+<meta name="description" content="{{ post.title }},{% for tg in post.tags %}{{ tg }},{% endfor %}, {{ post.description }}">
+{{ twittercard(post) }}
 {% endblock %}
 
 {% block title %}

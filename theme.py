@@ -6,7 +6,6 @@ pages = [
 ]
 vars = {
     "description": "a blog",
-    "twitter": "whouz",
     "github": "whtsky",
     "links": [
         {

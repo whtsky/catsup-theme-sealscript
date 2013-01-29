@@ -29,12 +29,8 @@
     </div>
     <div id="header_inner">
         <div id="social">
-            {% if theme.twitter %}
-            <a href="http://twitter.com/{{ theme.twitter }}" target="_blank" title="Follow Me @ Twitter"><img src="{{ static_url("image/ic16_twitter.png") }}"></a>
-            {% endif %}
-            {% if theme.github %}
+            <a href="http://twitter.com/{{ author.twitter }}" target="_blank" title="Follow Me @ Twitter"><img src="{{ static_url("image/ic16_twitter.png") }}"></a>
             <a href="http://github.com/{{ theme.github }}" target="_blank" title="Fork Me @ Github"><img src="{{ static_url("image/ic16_github.png") }}"></a>
-            {% endif %}
             <a href="{{ config.feed }}" target="_blank" title="Subscribe My Blog"><img src="{{ static_url("image/ic16_rss.png") }}"></a>
         </div>
         <div class="sep"></div>
