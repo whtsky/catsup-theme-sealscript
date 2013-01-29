@@ -13,11 +13,7 @@
                 </div>
 
                 <div class="text">
-                    {% if config.excerpt_index and post.excerpt %}
                     {{ post.excerpt }}
-                    {% else %}
-                    {{ post.content }}
-                    {% endif %}
                 </div>
                 <div class="article_meta">
                     <span>tagged:</span>
