@@ -14,6 +14,9 @@
 
                 <div class="text">
                     {{ post.excerpt }}
+                    {% if post.has_more %}
+                    <a href="{{ post.permalink }}">Read more...</a>
+                    {% endif %}
                 </div>
                 <div class="article_meta">
                     <span>tagged:</span>
