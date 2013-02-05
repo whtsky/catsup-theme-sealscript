@@ -2,7 +2,7 @@
 
 {% block content %}
 <ul id="article_list">
-    {% for post in g.posts[(p-1)*config.per_page:p*config.per_page] %}
+    {% for post in pagination.items %}
     <li class="list_item">
         <div class="article">
             <div class="inner">
@@ -31,20 +31,14 @@
     {% endfor %}
 </ul>
 
-{% if p > 1 %}
-<a id="prev" href="
-{% if p == 2 %}
-/
-{% else %}
-/page/{{ p - 1 }}.html
-{% endif %}
-" class="v_nav" >
+{% if pagination.has_prev %}
+<a id="prev" href="{{ pagination.prev_permalink }}" class="v_nav" >
     <span class="icon">Prev</span>
 </a>
 {% endif %}
 
-{% if posts_num > p * config.per_page %}
-<a id="next" href="/page/{{ p + 1 }}.html" class="v_nav" >
+{% if pagination.has_next %}
+<a id="next" href="{{ pagination.next_permalink }}" class="v_nav" >
     <span class="icon">Next</span>
 </a>
 {% endif %}
