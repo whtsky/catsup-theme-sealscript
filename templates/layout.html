@@ -46,14 +46,14 @@
             <div class="tag_cloud col">
                 <h2>Tag Cloud</h2>
                 {% for t in g.tags %}
-                <a class="tag" href="/tag/{{ t.name }}.html">{{ t.name }} ({{ t.post_count }})</a>
+                <a class="tag" href="/tag/{{ t.name }}.html">{{ t.name }} ({{ t.count }})</a>
                 {% endfor %}
             </div>
             <div class="col">
                 <h2>Archives</h2>
                 <ul>
                     {% for av in g.archives %}
-                    <li><a href="/archive/{{ av.name }}.html">{{ av.name }} ({{ av.post_count }})</a></li>
+                    <li><a href="/archive/{{ av.name }}.html">{{ av.name }} ({{ av.count }})</a></li>
                     {% endfor %}
                 </ul>
             </div>
