@@ -39,26 +39,31 @@ You can customize your theme by changin `theme.vars`
 
 + Change blog description
 ```json
+{
     "theme": {
         "name": "sealscript",
         "vars": {
             "description": "description here",
         }
     }
+}
 ```
 
 + Add your GitHub link
 ```json
+{
     "theme": {
         "name": "sealscript",
         "vars": {
             "github": "your github username",
         }
     }
+}
 ```
 
 + Add links in footer
 ```json
+{
     "theme": {
         "name": "sealscript",
         "vars": {
@@ -71,4 +76,5 @@ You can customize your theme by changin `theme.vars`
             ]
         }
     }
+}
 ```
