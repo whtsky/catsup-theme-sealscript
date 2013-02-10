@@ -7,7 +7,7 @@ Overview
 This is the default theme on [catsup](https://github.com/whtsky/catsup).
 It's designed by [Lyric Wai](https://github.com/lyricat) and ported by [whtsky](http://whouz.com).
 
-Online demo" [messence](http://messense.me/)
+Online demo: [messence](http://messense.me/)
 
 Installation
 --------------
