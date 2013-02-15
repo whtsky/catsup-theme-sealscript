@@ -45,7 +45,7 @@
         <div id="footer_inner">
             <div class="tag_cloud col">
                 <h2>Tag Cloud</h2>
-                {% for t in g.tags %}
+                {% for t in g.tags[:30] %}
                 <a class="tag" href="/tag/{{ t.name }}.html">{{ t.name }} ({{ t.count }})</a>
                 {% endfor %}
             </div>
