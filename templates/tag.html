@@ -1,17 +1,17 @@
 {% extends 'layout.html' %}
 
 {% block head %}
-<meta name=description content="{{ tag.name }},{{ theme.description }}">
+<meta name=description content="{{ name }},{{ site.description }}">
 {% endblock %}
 
 {% block title %}
-{{ tag.name }} | {{ site.name }}
+{{ name }} | {{ site.name }}
 {% endblock %}
 
 {% block content %}
 <div class="article">
     <div class="inner">
-        <h2 class="title">Articles Tagged as "{{ tag.name }}"</h2>
+        <h2 class="title">Articles Tagged as "{{ name }}"</h2>
         <div class="text">
             <ul>
                 {% for post in tag %}

@@ -13,10 +13,7 @@
                 </div>
 
                 <div class="text">
-                    {{ post.summary }}
-                    {% if post.has_more %}
-                    <a href="{{ post.permalink }}">Read more...</a>
-                    {% endif %}
+                    {{ post.content }}
                 </div>
                 <div class="article_meta">
                     <span>tagged:</span>

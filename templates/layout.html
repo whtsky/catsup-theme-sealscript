@@ -19,7 +19,7 @@
                 <h1 id="title"><a href="/">{{ site.name }}</a></h1>
                 <div id="description" class="seal">{{ theme.description }}</div>
                 <ul class="right">
-                    {% for t in g.tags[:5] %}
+                    {% for t in generator.tags[:5] %}
                     <li><a href="/tag/{{ t.name }}.html">{{ t.name }}</a></li>
                     <li class="dot">&bull;</li>
                     {% endfor %}
