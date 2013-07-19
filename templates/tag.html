@@ -14,10 +14,10 @@
         <h2 class="title">Articles Tagged as "{{ name }}"</h2>
         <div class="text">
             <ul>
-                {% for post in tag %}
+                {% for post in posts %}
                 <li>
                     <span class="time_stamp">{{ post.date }}</span>
-                    <a href="{{ post.permalink }}">{{ post.title }}</a>
+                    <a href="{{ url_for(post) }}">{{ post.title }}</a>
                 </li>
                 {% endfor %}
             </ul>

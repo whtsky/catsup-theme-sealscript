@@ -8,7 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ static_url("css/style.css") }}" type="text/css" />
     <link rel="stylesheet" href="{{ static_url("css/pygments_style.css") }}" type="text/css" />
-    <link rel="alternate" type="application/rss+xml" href="{{ config.feed }}" title="{{ site.name }}" />
+    <link rel="alternate" type="application/rss+xml" href="{{ url_for('feed') }}" title="{{ site.name }}" />
     {{ analytics() }}
 </head>
 <body>
@@ -19,8 +19,8 @@
                 <h1 id="title"><a href="/">{{ site.name }}</a></h1>
                 <div id="description" class="seal">{{ theme.description }}</div>
                 <ul class="right">
-                    {% for t in generator.tags[:5] %}
-                    <li><a href="/tag/{{ t.name }}.html">{{ t.name }}</a></li>
+                    {% for tag in generator.tags[:5] %}
+                    <li><a href="{{ url_for(tag) }}">{{ tag.name }}</a></li>
                     <li class="dot">&bull;</li>
                     {% endfor %}
                 </ul>
@@ -31,7 +31,7 @@
         <div id="social">
             <a href="http://twitter.com/{{ author.twitter }}" target="_blank" title="Follow Me @ Twitter"><img src="{{ static_url("image/ic16_twitter.png") }}"></a>
             <a href="http://github.com/{{ theme.github }}" target="_blank" title="Fork Me @ Github"><img src="{{ static_url("image/ic16_github.png") }}"></a>
-            <a href="{{ config.feed }}" target="_blank" title="Subscribe My Blog"><img src="{{ static_url("image/ic16_rss.png") }}"></a>
+            <a href="{{ url_for('feed') }}" target="_blank" title="Subscribe My Blog"><img src="{{ static_url("image/ic16_rss.png") }}"></a>
         </div>
         <div class="sep"></div>
     </div>
@@ -45,15 +45,15 @@
         <div id="footer_inner">
             <div class="tag_cloud col">
                 <h2>Tag Cloud</h2>
-                {% for t in g.tags %}
-                <a class="tag" href="/tag/{{ t.name }}.html">{{ t.name }} ({{ t.count }})</a>
+                {% for tag in generator.tags %}
+                <a class="tag" href="{{ url_for(tag) }}">{{ tag.name }} ({{ tag.count }})</a>
                 {% endfor %}
             </div>
             <div class="col">
                 <h2>Archives</h2>
                 <ul>
-                    {% for av in g.archives %}
-                    <li><a href="/archive/{{ av.name }}.html">{{ av.name }} ({{ av.count }})</a></li>
+                    {% for archive in generator.archives %}
+                    <li><a href="{{ url_for(archive) }}">{{ archive.year }} ({{ archive.count }})</a></li>
                     {% endfor %}
                 </ul>
             </div>
