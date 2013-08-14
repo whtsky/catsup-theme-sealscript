@@ -17,7 +17,7 @@
         <div id="nav">
             <div class="inner">
                 <h1 id="title"><a href="{{ url_for('index') }}">{{ site.name }}</a></h1>
-                <div id="description" class="seal">{{ theme.description }}</div>
+                <div id="description" class="seal">{{ site.description }}</div>
                 <ul class="right">
                     {% for tag in generator.tags[:5] %}
                     <li><a href="{{ url_for(tag) }}">{{ tag.name }}</a></li>
