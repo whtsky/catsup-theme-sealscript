@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ static_url("css/style.css") }}" type="text/css" />
     <link rel="stylesheet" href="{{ static_url("css/pygments_style.css") }}" type="text/css" />
     <link rel="alternate" type="application/rss+xml" href="{{ url_for('feed') }}" title="{{ site.name }}" />
+    <link rel="canonical" href="{{ permalink }}"/>
     {{ analytics() }}
 </head>
 <body>
@@ -45,9 +46,11 @@
         <div id="footer_inner">
             <div class="tag_cloud col">
                 <h2>Tag Cloud</h2>
+                <ul>
                 {% for tag in generator.tags %}
-                <a class="tag" href="{{ url_for(tag) }}">{{ tag.name }} ({{ tag.count }})</a>
+                <li><a class="tag" href="{{ url_for(tag) }}">{{ tag.name }} ({{ tag.count }})</a></li>
                 {% endfor %}
+                </ul>
             </div>
             <div class="col">
                 <h2>Archives</h2>
